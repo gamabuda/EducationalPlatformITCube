@@ -1,0 +1,68 @@
+﻿<Properties StartupConfiguration="{ECFDF8C9-DCF7-4A6E-8A65-A95EFB709767}|https">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.EducationalPlatformITCube.Inspector.Web.Server PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="EducationalPlatformITCube.Inspector.Web.Server/Shared/Other/SimpleCubeComponent.razor.css">
+    <Files>
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Program.cs" Line="2" Column="43" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Pages/Error.cshtml" Line="1" Column="1" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Pages/_Host.cshtml" Line="17" Column="227" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Shared/NavMenu.razor" Line="42" Column="78" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/wwwroot/css/site.css" Line="1" Column="67" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Shared/SurveyPrompt.razor" Line="1" Column="1" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Shared/MainLayout.razor" Line="3" Column="12" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Pages/Index.razor" Line="18" Column="60" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Shared/Other/SimpleCubeComponent.razor" Line="19" Column="18" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/Shared/Other/SimpleCubeComponent.razor.css" Line="25" Column="24" />
+      <File FileName="EducationalPlatformITCube.Inspector.Web.Server/_Imports.razor" Line="11" Column="67" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EducationalPlatformITCube.Inspector.Web.Server" expanded="True">
+            <Node name="EducationalPlatformITCube.Inspector.Web.Server" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="Other" expanded="True">
+                  <Node name="SimpleCubeComponent.razor" expanded="True">
+                    <Node name="SimpleCubeComponent.razor.css" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EducationalPlatformITCube.Inspector.Web.Server" expanded="True">
+            <Node name="EducationalPlatformITCube.Inspector.Web.Server" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Shared" expanded="True">
+                <Node name="Other" expanded="True">
+                  <Node name="SimpleCubeComponent.razor" expanded="True">
+                    <Node name="SimpleCubeComponent.razor.css" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

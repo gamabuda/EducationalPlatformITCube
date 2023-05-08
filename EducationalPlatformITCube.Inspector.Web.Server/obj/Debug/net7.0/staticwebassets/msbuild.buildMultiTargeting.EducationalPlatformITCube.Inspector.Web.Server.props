@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/EducationalPlatformITCube.Inspector.Web.Server.props" />
+</Project>

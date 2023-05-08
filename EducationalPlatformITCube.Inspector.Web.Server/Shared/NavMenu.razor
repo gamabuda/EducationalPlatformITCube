@@ -1,0 +1,65 @@
+﻿@*<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">EducationalPlatformITCube.Inspector.Web.Server</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="counter">
+                <span class="oi oi-plus" aria-hidden="true"></span> Counter
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+    </nav>
+</div>*@
+
+<header id="header" class="@NavMenuCssClass fixed-top d-flex align-items-center" @onclick="ToggleNavMenu">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <h1><a href="index.html" @onclick="ToggleNavMenu">IT-Cube</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto active" href="#hero">ГЛАВНАЯ</a></li>
+                <li><a class="nav-link scrollto" href="#about">О НАС</a></li>
+                <li><a class="nav-link scrollto" href="#services">КУРСЫ</a></li>
+                <li><a class="nav-link scrollto " href="#portfolio">ПРОГРАММЫ</a></li>
+                <li><a class="nav-link scrollto" href="#team">ЗАЯВКИ</a></li>
+                <li><a class="nav-link scrollto" href="#pricing">КОНТАКТЫ</a></li>
+                <li><a class="getstarted scrollto" href="#about">ПОДАТЬ ЗАЯВКУ</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle" @onclick="ToggleNavMenu"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
