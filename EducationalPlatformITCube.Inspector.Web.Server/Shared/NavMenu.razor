@@ -26,7 +26,7 @@
         </div>
     </nav>
 </div>*@
-
+@using Microsoft.AspNetCore.Components.Routing
 <header id="header" class="@NavMenuCssClass fixed-top d-flex align-items-center" @onclick="ToggleNavMenu">
     <div class="container d-flex align-items-center justify-content-between">
 
@@ -42,7 +42,7 @@
                 <li><a class="nav-link scrollto" href="#about">О НАС</a></li>
                 <li><a class="nav-link scrollto" href="#services">КУРСЫ</a></li>
                 <li><a class="nav-link scrollto " href="#portfolio">ПРОГРАММЫ</a></li>
-                <li><a class="nav-link scrollto" href="#team">ЗАЯВКИ</a></li>
+                <li><NavLink class="nav-link scrollto" href="request">ЗАЯВКИ</NavLink></li>
                 <li><a class="nav-link scrollto" href="#pricing">КОНТАКТЫ</a></li>
                 <li><a class="getstarted scrollto" href="#about">ПОДАТЬ ЗАЯВКУ</a></li>
             </ul>

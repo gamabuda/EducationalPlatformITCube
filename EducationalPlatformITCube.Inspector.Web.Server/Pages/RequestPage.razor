@@ -1,0 +1,119 @@
+﻿@page "/request"
+@using System.Collections.Generic
+@using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
+
+<h3 class="mt-5">Заявки</h3>
+
+<div class="filter-container">
+    <label>Фильтр по статусу:</label>
+    <select @bind="statusFilter">
+        <option value="">Все</option>
+        <option value="Ожидает обработки">Ожидает обработки</option>
+        <option value="Требуется дополнительная информация">Требуется дополнительная информация</option>
+        <option value="Отказ">Отказ</option>
+        <option value="Принято">Принято</option>
+    </select>
+</div>
+
+<table class="table mt-4 m-lg-auto">
+    <thead>
+        <tr>
+            <th>Фамилия ребенка</th>
+            <th>Имя ребенка</th>
+            <th>Дата рождения ребенка</th>
+            <th>Форма обучения</th>
+            <th>Направление обучения</th>
+            <th>Фамилия родителя</th>
+            <th>Имя родителя</th>
+            <th>Комментарий администратора</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var request in FilteredRequests)
+        {
+            <tr>
+                <td>@request.ChildLastName</td>
+                <td>@request.ChildFirstName</td>
+                <td>@request.ChildBirthDate.ToShortDateString()</td>
+                <td>@request.FormEducation</td>
+                <td>@request.CourseSelectionNumber</td>
+                <td>@request.ParentLastName</td>
+                <td>@request.ParentFirstName</td>
+                <td>@request.AdminComment</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="() => EditRequest(request.Id)">Редактировать</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteRequest(request.Id)">Удалить</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<RequestModel> Requests { get; set; }
+    private string statusFilter;
+
+    protected override void OnInitialized()
+    {
+        LoadTestData(); // Загружаем тестовые данные при инициализации страницы
+    }
+
+    private void LoadTestData()
+    {
+        Requests = new List<RequestModel>
+        {
+            new RequestModel
+            {
+                CourseSelectionNumber = 1,
+                ChildLastName = "Иванов",
+                ChildFirstName = "Иван",
+                ChildBirthDate = new DateTime(2010, 5, 15),
+                FormEducation = "Бюджет",
+                ParentLastName = "Петров",
+                ParentFirstName = "Петр",
+                AdminComment = "Ожидает обработки"
+            },
+            new RequestModel
+            {
+                CourseSelectionNumber = 2,
+                ChildLastName = "Сидоров",
+                ChildFirstName = "Алексей",
+                ChildBirthDate = new DateTime(2012, 8, 21),
+                FormEducation = "Коммерция",
+                ParentLastName = "Козлова",
+                ParentFirstName = "Мария",
+                AdminComment = "Требуется дополнительная информация"
+            },
+            // Добавьте здесь другие тестовые данные, если необходимо
+        };
+    }
+
+    private void EditRequest(int requestId)
+    {
+        // Логика для редактирования заявки
+    }
+
+    private void DeleteRequest(int requestId)
+    {
+        // Логика для удаления заявки
+    }
+
+    private List<RequestModel> FilteredRequests
+    {
+        get
+        {
+            if ( !string.IsNullOrWhiteSpace(statusFilter))
+            {
+                return Requests.Where(r =>
+                    
+                    (string.IsNullOrWhiteSpace(statusFilter) || r.AdminComment.Equals(statusFilter, StringComparison.OrdinalIgnoreCase))
+                ).ToList();
+            }
+            else
+            {
+                return Requests;
+            }
+        }
+    }
+}
