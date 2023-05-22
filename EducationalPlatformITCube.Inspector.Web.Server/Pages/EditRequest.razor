@@ -1,0 +1,134 @@
+﻿@page "/edit-request/{requestJson}"
+@using System
+@using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
+@inject NavigationManager NavigationManager
+@using Newtonsoft.Json
+<h3>Редактирование заявки</h3>
+
+@if (Request == null)
+{
+    <p>Загрузка...</p>
+}
+else
+{
+    <form>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" class="form-control" type="email" @bind="Request.Email" />
+        </div>
+        <div class="form-group">
+            <label for="childLastName">Фамилия ребенка:</label>
+            <input id="childLastName" class="form-control" type="text" @bind="Request.ChildLastName" />
+        </div>
+        <div class="form-group">
+            <label for="childFirstName">Имя ребенка:</label>
+            <input id="childFirstName" class="form-control" type="text" @bind="Request.ChildFirstName" />
+        </div>
+        <div class="form-group">
+            <label for="childMiddleName">Отчество ребенка:</label>
+            <input id="childMiddleName" class="form-control" type="text" @bind="Request.ChildMiddleName" />
+        </div>
+        <div class="form-group">
+            <label for="childBirthDate">Дата рождения ребенка:</label>
+            <input id="childBirthDate" class="form-control" type="date" @bind="Request.ChildBirthDate" />
+        </div>
+        <div class="form-group">
+            <label for="age">Возраст:</label>
+            <input id="age" class="form-control" type="number" @bind="Request.Age" />
+        </div>
+        <div class="form-group">
+            <label for="schoolNumber">№ школы:</label>
+            <input id="schoolNumber" class="form-control" type="text" @bind="Request.SchoolNumber" />
+        </div>
+        <div class="form-group">
+            <label for="grade">Класс:</label>
+            <input id="grade" class="form-control" type="text" @bind="Request.Grade" />
+        </div>
+        <div class="form-group">
+            <label for="studyShift">Смена обучения:</label>
+            <input id="studyShift" class="form-control" type="text" @bind="Request.StudyShift" />
+        </div>
+        <div class="form-group">
+            <label for="courseSelectionNumber">Номер выбранного направления курса:</label>
+            <input id="courseSelectionNumber" class="form-control" type="number" @bind="Request.CourseSelectionNumber" />
+        </div>
+        <div class="form-group">
+            <label for="formEducation">Форма обучения:</label>
+            <input id="formEducation" class="form-control" type="text" @bind="Request.FormEducation" />
+        </div>
+        <div class="form-group">
+            <label for="parentLastName">Фамилия родителя:</label>
+            <input id="parentLastName" class="form-control" type="text" @bind="Request.ParentLastName" />
+        </div>
+        <div class="form-group">
+            <label for="parentFirstName">Имя родителя:</label>
+            <input id="parentFirstName" class="form-control" type="text" @bind="Request.ParentFirstName" />
+        </div>
+        <div class="form-group">
+            <label for="parentMiddleName">Отчество родителя:</label>
+            <input id="parentMiddleName" class="form-control" type="text" @bind="Request.ParentMiddleName" />
+        </div>
+        <div class="form-group">
+            <label for="parentPhoneNumber">Номер родителя:</label>
+            <input id="parentPhoneNumber" class="form-control" type="text" @bind="Request.ParentPhoneNumber" />
+        </div>
+        <div class="form-group">
+            <label for="parentComment">Комментарий родителя:</label>
+            <input id="parentComment" class="form-control" type="text" @bind="Request.ParentComment" />
+        </div>
+        <div class="form-group">
+            <label for="adminComment">Комментарий администратора:</label>
+            <input id="adminComment" class="form-control" type="text" @bind="Request.AdminComment" />
+        </div>
+
+        <button class="btn btn-primary" @onclick="SaveChanges">Сохранить изменения</button>
+    </form>
+}
+
+@code {
+    
+    public RequestModel Request { get; set; }
+    private int RequestId { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        if (!string.IsNullOrEmpty(RequestJson))
+        {
+            Request = Newtonsoft.Json.JsonConvert.DeserializeObject<RequestModel>(RequestJson);
+        }
+    }
+
+    [Parameter]
+    public string RequestJson { get; set; }
+    //protected override void OnInitialized()
+    //{
+    //    var uri = new Uri(NavigationManager.Uri);
+    //    var idSegment = uri.Segments.Last();
+    //    if (int.TryParse(idSegment, out int requestId))
+    //    {
+    //        RequestId = requestId;
+    //        LoadRequest();
+    //    }
+    //}
+
+    private void LoadRequest()
+    {
+        // Загрузка заявки по RequestId из базы данных или другого источника данных
+        // Пример загрузки тестовой заявки
+        Request = new RequestModel
+            {
+                Id = RequestId,
+                // Заполните остальные свойства заявки соответствующими значениями
+            };
+    }
+
+    private void SaveChanges()
+    {
+        // Сохранение изменений в заявке
+        // Обновите заявку в базе данных или другом источнике данных
+        Console.WriteLine($"Сохранение изменений в заявке с ID {Request.Id}");
+        Console.WriteLine("Заявка после сохранения:");
+        Console.WriteLine(Request);
+        //NavigationManager.NavigateTo("/request", forceLoad: true);
+    }
+}

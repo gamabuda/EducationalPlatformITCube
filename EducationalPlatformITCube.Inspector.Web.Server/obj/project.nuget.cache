@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xPJ+AFmb2f9jv3899Qvwu7ADRT0/pC/X4ELAlcFE+lGfuF1pwMGsXySezcV2ooUXPjMsEh+ewoOJ4pwgH9xioQ==",
+  "dgSpecHash": "oQWJ2WJABefPFPzdYVMk31OD+wwg375x3AzManbvlisImVPbRflZOc2FRF/CWg90f/aHK2+x4YdM63043t2ITw==",
   "success": true,
   "projectFilePath": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\EducationalPlatformITCube.Inspector.Web.Server.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\secon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

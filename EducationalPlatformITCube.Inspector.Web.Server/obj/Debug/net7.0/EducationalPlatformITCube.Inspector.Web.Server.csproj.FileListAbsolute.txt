@@ -64,3 +64,5 @@ C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\EducationalPlatformITCube.Inspector.Web.Server.pdb
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\EducationalPlatformITCube.Inspector.Web.Server.genruntimeconfig.cache
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\ref\EducationalPlatformITCube.Inspector.Web.Server.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\EducationalPlatformITCube.Inspector.Web.Server.csproj.CopyComplete

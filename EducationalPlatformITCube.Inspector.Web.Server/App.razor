@@ -3,6 +3,7 @@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
 
         <RouteViewRoute RouteData="@routeData" DefaultLayout="typeof(MainLayout)" Route="nameof(RequestPage)" />
+        <RouteViewRoute RouteData="@routeData" DefaultLayout="typeof(MainLayout)" Route="nameof(EditRequest)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>

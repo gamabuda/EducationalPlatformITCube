@@ -1,7 +1,8 @@
 ﻿@page "/request"
 @using System.Collections.Generic
 @using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
-
+@using Newtonsoft.Json
+@inject NavigationManager NavigationManager
 <h3 class="mt-5">Заявки</h3>
 
 <div class="filter-container">
@@ -42,8 +43,8 @@
                 <td>@request.ParentFirstName</td>
                 <td>@request.AdminComment</td>
                 <td>
-                    <button class="btn btn-primary" @onclick="() => EditRequest(request.Id)">Редактировать</button>
-                    <button class="btn btn-danger" @onclick="() => DeleteRequest(request.Id)">Удалить</button>
+                    <button class="btn btn-primary"  @onclick="() => EditRequest(request)">Редактировать</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteRequest(request)">Удалить</button>
                 </td>
             </tr>
         }
@@ -89,12 +90,16 @@
         };
     }
 
-    private void EditRequest(int requestId)
+    private void EditRequest(RequestModel request)
     {
         // Логика для редактирования заявки
+        //var navigationParameters = new Dictionary<string, object> { { "request", request } };
+        //NavigationManager.NavigateTo($"/edit-request?request={Uri.EscapeDataString(JsonConvert.SerializeObject(request))}", forceLoad: true);
+        string requestJson = System.Web.HttpUtility.UrlEncode(Newtonsoft.Json.JsonConvert.SerializeObject(request));
+        NavigationManager.NavigateTo($"/edit-request/{requestJson}");
     }
 
-    private void DeleteRequest(int requestId)
+    private void DeleteRequest(RequestModel requestId)
     {
         // Логика для удаления заявки
     }

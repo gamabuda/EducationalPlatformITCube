@@ -26,6 +26,9 @@ app.UseRouting();
 
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+app.MapFallbackToPage("/edit-request", "/EditRequest");
+app.MapFallbackToPage("/request", "/RequestPage");
+
 
 app.Run();
 
