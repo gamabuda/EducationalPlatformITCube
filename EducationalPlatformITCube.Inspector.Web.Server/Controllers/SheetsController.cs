@@ -19,7 +19,7 @@ namespace EducationalPlatformITCube.Inspector.Web.Server.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var range = $"{SHEET_NAME}!A:T";
+            var range = $"{SHEET_NAME}!A:U";
             var request = _googleSheetValues.Get(SPREADSHEET_ID, range);
             var response = request.Execute();
             var values = response.Values;

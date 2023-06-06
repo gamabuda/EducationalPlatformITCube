@@ -26,7 +26,7 @@
                     ParentPhoneNumber = value[14].ToString(),
                     ParentComment = value[15].ToString(),
                     //posInQuery = value[16].ToString(),
-                    //AdminComment = value[17].ToString()
+                    //AdminComment = value[20].ToString()
                 };
                 items.Add(item);
             }
