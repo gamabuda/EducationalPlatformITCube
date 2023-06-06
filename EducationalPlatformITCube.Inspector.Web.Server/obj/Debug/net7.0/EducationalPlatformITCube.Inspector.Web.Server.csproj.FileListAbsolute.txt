@@ -66,3 +66,9 @@ C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\ref\EducationalPlatformITCube.Inspector.Web.Server.dll
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\obj\Debug\net7.0\EducationalPlatformITCube.Inspector.Web.Server.csproj.CopyComplete
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Pages\Classes\client_secrets.json
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Google.Apis.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Google.Apis.Auth.PlatformServices.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Google.Apis.Auth.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Google.Apis.Core.dll
+C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server\bin\Debug\net7.0\Google.Apis.Sheets.v4.dll

@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "oQWJ2WJABefPFPzdYVMk31OD+wwg375x3AzManbvlisImVPbRflZOc2FRF/CWg90f/aHK2+x4YdM63043t2ITw==",
+  "dgSpecHash": "jJVp1tOALZrIT8TBei349Jxs4+lrdDmwXZcCyd+bf+aEGB5RMxVFlq/hiS6inK6y5mEhdgel9CJWe5X0KhSFGw==",
   "success": true,
   "projectFilePath": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\EducationalPlatformITCube.Inspector.Web.Server.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\secon\\.nuget\\packages\\google.apis\\1.60.0\\google.apis.1.60.0.nupkg.sha512",
+    "C:\\Users\\secon\\.nuget\\packages\\google.apis.auth\\1.60.0\\google.apis.auth.1.60.0.nupkg.sha512",
+    "C:\\Users\\secon\\.nuget\\packages\\google.apis.core\\1.60.0\\google.apis.core.1.60.0.nupkg.sha512",
+    "C:\\Users\\secon\\.nuget\\packages\\google.apis.sheets.v4\\1.60.0.2979\\google.apis.sheets.v4.1.60.0.2979.nupkg.sha512",
     "C:\\Users\\secon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []

@@ -11,7 +11,10 @@
 }
 else
 {
-    <form>
+    <form mt-4 m-lg-auto>
+        <br />
+        <br />
+        <br />
         <div class="form-group">
             <label for="email">Email:</label>
             <input id="email" class="form-control" type="email" @bind="Request.Email" />
@@ -30,11 +33,11 @@ else
         </div>
         <div class="form-group">
             <label for="childBirthDate">Дата рождения ребенка:</label>
-            <input id="childBirthDate" class="form-control" type="date" @bind="Request.ChildBirthDate" />
+            <input id="childBirthDate" class="form-control" type="text" @bind="Request.ChildBirthDate" />
         </div>
         <div class="form-group">
             <label for="age">Возраст:</label>
-            <input id="age" class="form-control" type="number" @bind="Request.Age" />
+            <input id="age" class="form-control" type="text" @bind="Request.Age" />
         </div>
         <div class="form-group">
             <label for="schoolNumber">№ школы:</label>
@@ -50,12 +53,12 @@ else
         </div>
         <div class="form-group">
             <label for="courseSelectionNumber">Номер выбранного направления курса:</label>
-            <input id="courseSelectionNumber" class="form-control" type="number" @bind="Request.CourseSelectionNumber" />
+            <input id="courseSelectionNumber" class="form-control" type="text" @bind="Request.CourseSelection" />
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <label for="formEducation">Форма обучения:</label>
             <input id="formEducation" class="form-control" type="text" @bind="Request.FormEducation" />
-        </div>
+        </div>*@
         <div class="form-group">
             <label for="parentLastName">Фамилия родителя:</label>
             <input id="parentLastName" class="form-control" type="text" @bind="Request.ParentLastName" />
@@ -117,7 +120,7 @@ else
         // Пример загрузки тестовой заявки
         Request = new RequestModel
             {
-                Id = RequestId,
+                //Id = RequestId,
                 // Заполните остальные свойства заявки соответствующими значениями
             };
     }
@@ -126,9 +129,9 @@ else
     {
         // Сохранение изменений в заявке
         // Обновите заявку в базе данных или другом источнике данных
-        Console.WriteLine($"Сохранение изменений в заявке с ID {Request.Id}");
-        Console.WriteLine("Заявка после сохранения:");
-        Console.WriteLine(Request);
-        //NavigationManager.NavigateTo("/request", forceLoad: true);
+        //Console.WriteLine($"Сохранение изменений в заявке с ID {Request.Id}");
+        //Console.WriteLine("Заявка после сохранения:");
+        //Console.WriteLine(Request);
+        NavigationManager.NavigateTo("/request", forceLoad: true);
     }
 }

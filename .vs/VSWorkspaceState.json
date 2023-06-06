@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\EducationalPlatformITCube.Inspector.Web.Server",
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages"
   ],
-  "SelectedNode": "\\EducationalPlatformITCube.Inspector.Web.Server.sln",
+  "SelectedNode": "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages\\RequestPage.razor",
   "PreviewInSolutionExplorer": false
 }

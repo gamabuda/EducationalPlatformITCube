@@ -1,9 +1,14 @@
 ﻿@page "/request"
 @using System.Collections.Generic
+@using Microsoft.AspNetCore.Components
 @using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
 @using Newtonsoft.Json
 @inject NavigationManager NavigationManager
-<h3 class="mt-5">Заявки</h3>
+@inject HttpClient httpClient
+httpClient.BaseAddress = new Uri("http://localhost:5172");
+<br/>
+<br/>
+
 
 <div class="filter-container">
     <label>Фильтр по статусу:</label>
@@ -16,48 +21,136 @@
     </select>
 </div>
 
-<table class="table mt-4 m-lg-auto">
-    <thead>
-        <tr>
-            <th>Фамилия ребенка</th>
-            <th>Имя ребенка</th>
-            <th>Дата рождения ребенка</th>
-            <th>Форма обучения</th>
-            <th>Направление обучения</th>
-            <th>Фамилия родителя</th>
-            <th>Имя родителя</th>
-            <th>Комментарий администратора</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var request in FilteredRequests)
-        {
+@if (Requests != null)
+{
+    <table class="table mt-4 m-lg-auto">
+        <thead>
             <tr>
-                <td>@request.ChildLastName</td>
-                <td>@request.ChildFirstName</td>
-                <td>@request.ChildBirthDate.ToShortDateString()</td>
-                <td>@request.FormEducation</td>
-                <td>@request.CourseSelectionNumber</td>
-                <td>@request.ParentLastName</td>
-                <td>@request.ParentFirstName</td>
-                <td>@request.AdminComment</td>
-                <td>
-                    <button class="btn btn-primary"  @onclick="() => EditRequest(request)">Редактировать</button>
-                    <button class="btn btn-danger" @onclick="() => DeleteRequest(request)">Удалить</button>
+                <th>Номер в очереди</th>
+                <th>Фамилия ребенка</th>
+                <th>Имя ребенка</th>
+                <th>Дата рождения ребенка</th>
+                <th>Направление обучения</th>
+                <th>Фамилия родителя</th>
+                <th>Имя родителя</th>
+                <th>Комментарий администратора</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in displayedRequests)
+            {
+                <tr>
+                    <td>@request.posInQuery</td>
+                    <td>@request.ChildLastName</td>
+                    <td>@request.ChildFirstName</td>
+                    <td>@request.ChildBirthDate</td>
+                    <td>@request.CourseSelection</td>
+                    <td>@request.ParentLastName</td>
+                    <td>@request.ParentFirstName</td>
+                    <td>@request.AdminComment</td>
+                    <td>
+                        <button class="btn btn-primary"  @onclick="() => EditRequest(request)">Просмотр</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteRequest(request)">Удалить</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="9">
+                    <nav aria-label="Pagination">
+                        <ul class="pagination">
+                            @if (currentPage > 1)
+                            {
+                                <li class="page-item">
+                                    <button class="page-link" @onclick="() => ChangePage(currentPage - 1)">Предыдущая</button>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= totalPages; i++)
+                            {
+                                <li class="page-item @(currentPage == i ? "active" : "")">
+                                    <button class="page-link" @onclick="() => ChangePage(i)">@i</button>
+                                </li>
+                            }
+
+                            @if (currentPage < totalPages)
+                            {
+                                <li class="page-item">
+                                    <button class="page-link" @onclick="() => ChangePage(currentPage + 1)">Следующая</button>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
                 </td>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </tfoot>
+    </table>
+}
+else
+{
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>Loading...</p>
+}
 @code {
-    private List<RequestModel> Requests { get; set; }
+
+    public List<RequestModel> Requests { get; set; }
+    int pageSize = 10; // Количество элементов на странице
+    int currentPage = 1; // Текущая страница
+    int totalPages;  //(int)Math.Ceiling((decimal)Requests.Count / pageSize); // Общее количество страниц
+    List<RequestModel> displayedRequests; //Requests.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList(); // Отображаемые запросы на текущей странице
     private string statusFilter;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        LoadTestData(); // Загружаем тестовые данные при инициализации страницы
+        Console.WriteLine("Запуск запроса");
+        //LoadTestData(); // Загружаем тестовые данные при инициализации страницы
+        //Requests = await httpClient.GetFromJsonAsync<List<RequestModel>>("/api/Sheets"); // Используйте правильный URL пути к вашему контроллеру
+        await GetDataFromController();
+        totalPages = (int)Math.Ceiling((decimal)Requests.Count / pageSize);
+        displayedRequests = Requests.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+    }
+
+    void ChangePage(int newPage)
+    {
+        currentPage = newPage;
+        displayedRequests = Requests.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+    }
+
+    private async Task GetDataFromController()
+    {
+        try
+        {
+            var response = await httpClient.GetAsync("/api/Requests");
+            response.EnsureSuccessStatusCode();
+
+            Requests = await response.Content.ReadFromJsonAsync<List<RequestModel>>();
+            Requests.RemoveAt(0);
+            int query = 1;
+            foreach (var f in Requests)
+            {
+                if (f.AdminComment == null)
+                {
+                    f.AdminComment = "Ожидает обработки";
+                }
+                if (f.AdminComment == "Ожидает обработки")
+                {
+                    f.posInQuery = Convert.ToString(query);
+                    query++;
+                }
+            }
+            
+            // Обработка полученных данных
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ошибка запроса " + ex.Message);
+            // Обработка ошибки
+        }
     }
 
     private void LoadTestData()
@@ -66,10 +159,10 @@
         {
             new RequestModel
             {
-                CourseSelectionNumber = 1,
+                //CourseSelectionNumber = 1,
                 ChildLastName = "Иванов",
                 ChildFirstName = "Иван",
-                ChildBirthDate = new DateTime(2010, 5, 15),
+                //ChildBirthDate = new DateTime(2010, 5, 15),
                 FormEducation = "Бюджет",
                 ParentLastName = "Петров",
                 ParentFirstName = "Петр",
@@ -77,10 +170,10 @@
             },
             new RequestModel
             {
-                CourseSelectionNumber = 2,
+                //CourseSelectionNumber = 2,
                 ChildLastName = "Сидоров",
                 ChildFirstName = "Алексей",
-                ChildBirthDate = new DateTime(2012, 8, 21),
+                //ChildBirthDate = new DateTime(2012, 8, 21),
                 FormEducation = "Коммерция",
                 ParentLastName = "Козлова",
                 ParentFirstName = "Мария",
@@ -102,6 +195,7 @@
     private void DeleteRequest(RequestModel requestId)
     {
         // Логика для удаления заявки
+        Requests.Remove(requestId);
     }
 
     private List<RequestModel> FilteredRequests
