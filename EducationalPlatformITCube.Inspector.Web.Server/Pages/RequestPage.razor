@@ -3,6 +3,8 @@
 @using Microsoft.AspNetCore.Components
 @using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
 @using Newtonsoft.Json
+@using System.Net.Mail;
+@using System.Net;
 @inject NavigationManager NavigationManager
 @inject HttpClient httpClient
 httpClient.BaseAddress = new Uri("http://localhost:5172");
@@ -121,6 +123,7 @@ else
         displayedRequests = Requests.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
     }
 
+
     private async Task GetDataFromController()
     {
         try
@@ -133,6 +136,18 @@ else
             int query = 1;
             foreach (var f in Requests)
             {
+                try
+                {
+                    if (Convert.ToInt32(f.Age) < 6 || Convert.ToInt32(f.Age) > 18)
+                    {
+                        await SendEmail(f.Email, "Отказ в заявке", "Не подходящий возраст ребенка");
+                        f.AdminComment = "Отказ";
+                    }
+                } catch
+                {
+                    
+                }
+
                 if (f.AdminComment == null)
                 {
                     f.AdminComment = "Ожидает обработки";
@@ -150,6 +165,28 @@ else
         {
             Console.WriteLine("Ошибка запроса " + ex.Message);
             // Обработка ошибки
+        }
+    }
+
+    public async Task SendEmail(string recipient, string subject, string body)
+    {
+        MailAddress fromM = new MailAddress("testmailc704@gmail.com", "It-Cube");
+        MailAddress toM = new MailAddress(recipient); //куда отправить
+
+        using (MailMessage message = new MailMessage(fromM, toM))
+        using (SmtpClient smtpClient = new SmtpClient())
+        {
+            message.Subject = subject; // Заголовок
+            message.Body = body; //Содержание
+
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Port = 587;
+            smtpClient.EnableSsl = true;
+            smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential(fromM.Address, "wfxzisvaxdnzzjqp");
+
+            await smtpClient.SendMailAsync(message);
         }
     }
 
