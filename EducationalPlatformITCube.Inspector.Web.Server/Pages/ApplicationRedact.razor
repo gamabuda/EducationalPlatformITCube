@@ -1,0 +1,179 @@
+﻿@page "/applicationRedact/{number:int}"
+@using EducationalPlatformITCube.Inspector.Web.Server.Pages.Classes;
+@inject DB context
+@inject NavigationManager NavigationManager
+@inject SendMail sendM
+<html>
+<body>
+    <div class="login-root" style="margin-top: 3px">
+        <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
+            <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
+                <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
+                    <h1>IT-cube</h1>
+                </div>
+                <div class="formbg-outer">
+                    <div class="formbg">
+                        <div class="formbg-inner padding-horizontal--48">
+                            <span class="padding-bottom--15">Редактирование заявки</span>
+                            <form id="stripe-login">
+                                <EditForm Model="@applicationModel" OnValidSubmit="SubmitForm">
+                                    <DataAnnotationsValidator />
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm" style="margin-left: 20px">
+                                                <div class="field padding-bottom--24">
+                                                    <label for="email">Почта:</label>
+                                                    <InputText id="email" class="form-control" @bind-Value="@applicationModel.Email" />
+                                                    <ValidationMessage For="@(() => applicationModel.Email)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="lastName">Фамилия:</label>
+                                                    <InputText id="lastName" class="form-control" @bind-Value="@applicationModel.LastName" />
+                                                    <ValidationMessage For="@(() => applicationModel.LastName)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="firstName">Имя:</label>
+                                                    <InputText id="firstName" class="form-control" @bind-Value="@applicationModel.FirstName" />
+                                                    <ValidationMessage For="@(() => applicationModel.FirstName)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="middleName">Отчество ребенка:</label>
+                                                    <InputText id="middleName" class="form-control" @bind-Value="@applicationModel.MiddleName" />
+                                                    <ValidationMessage For="@(() => applicationModel.MiddleName)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm" style="margin-left: 20px">
+                                                <div class="field padding-bottom--24">
+                                                    <label for="dateOfBirth">Дата рождения:</label>
+                                                    <InputDate id="dateOfBirth" class="form-control" @bind-Value="@applicationModel.DateOfBirth" />
+                                                    <ValidationMessage For="@(() => applicationModel.DateOfBirth)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="age">Возраст:</label>
+                                                    <InputNumber id="age" class="form-control" @bind-Value="@applicationModel.Age" />
+                                                    <ValidationMessage For="@(() => applicationModel.Age)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="schoolNumber">№ Школы:</label>
+                                                    <InputNumber id="schoolNumber" class="form-control" @bind-Value="@applicationModel.SchoolNumber" />
+                                                    <ValidationMessage For="@(() => applicationModel.SchoolNumber)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="schoolClass">Класс в школе:</label>
+                                                    <InputText id="schoolClass" class="form-control" @bind-Value="@applicationModel.SchoolClass" />
+                                                    <ValidationMessage For="@(() => applicationModel.SchoolClass)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="session">Выбор смены обучения:</label>
+                                                    <InputSelect id="session" class="form-control" @bind-Value="@applicationModel.Session">
+                                                        <option value="Первая">Первая</option>
+                                                        <option value="Вторая">Вторая</option>
+                                                    </InputSelect>
+                                                    <ValidationMessage For="@(() => applicationModel.Session)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="studyDirection">Выбор направления обучения:</label>
+                                                    <InputSelect id="studyDirection" class="form-control" @bind-Value="@applicationModel.StudyDirection">
+                                                        <option value="Python">Программирование «Python» (Яндекс.Лицей). C 14 лет</option>
+                                                        <option value="Java">Программирование «Java». C 12 лет</option>
+                                                        <option value="SA">Системное Администрирование. C 12 лет</option>
+                                                        <option value="R">Программирование роботов (Мобильная робототехника). 6-8 лет WeDo 2.0, 9-10 лет EV3, 11-14 лет Arduino</option>
+                                                        <option value="MR">Мобильная разработка (Школа Samsung). C 14 лет</option>
+                                                        <option value="VR">Разработка VR/AR приложений; с 12 лет.</option>
+                                                        <!-- Добавьте остальные варианты направлений -->
+                                                    </InputSelect>
+                                                    <ValidationMessage For="@(() => applicationModel.StudyDirection)" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm" style="margin-left: 20px">
+                                                <h4>Данные родителя:</h4>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="parentLastName">Фамилия:</label>
+                                                    <InputText id="parentLastName" class="form-control" @bind-Value="@applicationModel.ParentLastName" />
+                                                    <ValidationMessage For="@(() => applicationModel.ParentLastName)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="parentFirstName">Имя:</label>
+                                                    <InputText id="parentFirstName" class="form-control" @bind-Value="@applicationModel.ParentFirstName" />
+                                                    <ValidationMessage For="@(() => applicationModel.ParentFirstName)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="parentMiddleName">Отчество:</label>
+                                                    <InputText id="parentMiddleName" class="form-control" @bind-Value="@applicationModel.ParentMiddleName" />
+                                                    <ValidationMessage For="@(() => applicationModel.ParentMiddleName)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="parentPhoneNumber">Контактный телефон:</label>
+                                                    <InputText id="parentPhoneNumber" class="form-control" @bind-Value="@applicationModel.ParentPhoneNumber" />
+                                                    <ValidationMessage For="@(() => applicationModel.ParentPhoneNumber)" />
+                                                </div>
+                                                <div class="field padding-bottom--24">
+                                                    <label for="comment">Комментарий:</label>
+                                                    <InputTextArea id="comment" class="form-control" @bind-Value="@applicationModel.Comment" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    <div class="field padding-bottom--24">
+                                        <label for="session">Статус заявки:</label>
+                                        <InputSelect id="session" class="form-control" @bind-Value="@applicationModel.Status">
+                                            <option value="Ожидает обработки">Ожидает обработки</option>
+                                            <option value="Требуется дополнительная информация">Требуется дополнительная информация</option>
+                                            <option value="Отказ">Отказ</option>
+                                            <option value="Принят">Принят</option>
+                                        </InputSelect>
+                                        <ValidationMessage For="@(() => applicationModel.Session)" />
+                                    </div>
+                                    <div class="field padding-bottom--24">
+                                        <label for="AdminComment">Комментарий администратора:</label>
+                                        <InputTextArea id="AdminComment" class="form-control" @bind-Value="@applicationModel.AdminComment" />
+                                    </div>
+                                    <div class="field padding-bottom--24">
+                                        <input @onclick="SubmitForm" type="submit" name="submit" value="Сохранить заявку">
+                                    </div>
+
+                                </EditForm>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+@code {
+    private RequestModel applicationModel = new RequestModel();
+    [Parameter]
+    public int Number { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        applicationModel = context.RequestModels.Where(x => x.Id == Number).FirstOrDefault();
+    }
+
+    private  async void SubmitForm()
+    {
+        try
+        {
+                context.RequestModels[Number - 1] = applicationModel; //изменить на адекватный
+                if (applicationModel.Status == "Принят")
+                    sendM.SendEmail(applicationModel.Email, "Вашу заявку одобрили", "С вами свяжутся в ближайшее время, с уважением IT-Cube.");
+                NavigationManager.NavigateTo("/request");
+            //проверить на заполнение
+            Console.WriteLine($"{applicationModel.FirstName} {applicationModel.StudyDirection}");
+            // Ваш код обработки отправки заявки здесь
+            // Вы можете использовать applicationModel для доступа к значениям полей формы
+        }
+        catch
+        {
+
+        }
+
+    }
+}

@@ -16,46 +16,62 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\secon\Source\Repos\EducationalPlatformITCube\EducationalPlatformITCube.Inspector.Web.Server
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/App.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/EditRequest.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFJlcXVlc3QucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/Index.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/RequestPage.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxdWVzdFBhZ2UucmF6b3I=
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/MessageComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWVzc2FnZUNvbXBvbmVudC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/SurveyPrompt.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/_Imports.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/MainLayout.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/ApplicationPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25QYWdlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-9mkjmfblte
+
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/ApplicationRedact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25SZWRhY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-orsednizvf
+
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/RequestPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVxdWVzdFBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hh0tpgxsji
+
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/TestAddRequest.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdEFkZFJlcXVlc3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-aa9jntz0sr
+
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/TestTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFRhYmxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-1rhpm5hhjp
+
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-h95xt69gzo
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/NavMenu.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-jzftp5zhfo
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/Other/SimpleCubeComponent.razor]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Shared/Other/SimpleCubeComponent.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE90aGVyXFNpbXBsZUN1YmVDb21wb25lbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-hdjs8ti09w
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/Error.cshtml]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/secon/Source/Repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/_Host.cshtml]
+[C:/Users/secon/source/repos/EducationalPlatformITCube/EducationalPlatformITCube.Inspector.Web.Server/Pages/_Host.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

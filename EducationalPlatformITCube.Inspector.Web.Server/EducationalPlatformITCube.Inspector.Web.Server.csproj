@@ -17,7 +17,12 @@
     <Folder Include="Shared\Other\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ClosedXML.Report" Version="0.2.6" />
+    <PackageReference Include="EPPlus" Version="6.2.4" />
     <PackageReference Include="Google.Apis.Sheets.v4" Version="1.60.0.2979" />
+    <PackageReference Include="IronXL.Excel" Version="2023.6.4" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Syncfusion.XlsIO.Net.Core" Version="21.2.10" />
   </ItemGroup>
 </Project>

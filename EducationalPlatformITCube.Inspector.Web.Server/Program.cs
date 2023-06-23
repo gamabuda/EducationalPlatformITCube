@@ -24,6 +24,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://
 
 builder.Services.AddControllers();
 builder.Services.AddSingleton(typeof(GoogleSheetsHelper));
+builder.Services.AddSingleton(typeof(SendMail));
+builder.Services.AddSingleton(typeof(DB));
 
 
 
@@ -47,7 +49,6 @@ app.UseRouting();
 app.MapBlazorHub();
 app.MapControllers();
 app.MapFallbackToPage("/_Host");
-app.MapFallbackToPage("/edit-request", "/EditRequest");
 app.MapFallbackToPage("/request", "/RequestPage");
 
 

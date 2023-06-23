@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\EducationalPlatformITCube.Inspector.Web.Server",
-    "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages"
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\Controllers",
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\js",
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages",
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages\\Classes",
+    "\\EducationalPlatformITCube.Inspector.Web.Server\\Shared"
   ],
-  "SelectedNode": "\\EducationalPlatformITCube.Inspector.Web.Server\\Pages\\RequestPage.razor",
+  "SelectedNode": "\\EducationalPlatformITCube.Inspector.Web.Server\\Shared\\NavMenu.razor",
   "PreviewInSolutionExplorer": false
 }

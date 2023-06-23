@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YSVrEF24lJmDBhpS9jQTkOpAfugLrYl+jP6f0wO5oX8=",
+  "Hash": "Ya/8HT7qT8Ea0qfJECaNj9pjgAr4oB30fhT+KanYB38=",
   "Source": "EducationalPlatformITCube.Inspector.Web.Server",
   "BasePath": "_content/EducationalPlatformITCube.Inspector.Web.Server",
   "Mode": "Default",
@@ -270,6 +270,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\wwwroot\\js\\interop.js",
+      "SourceId": "EducationalPlatformITCube.Inspector.Web.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\wwwroot\\",
+      "BasePath": "_content/EducationalPlatformITCube.Inspector.Web.Server",
+      "RelativePath": "js/interop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\interop.js"
+    },
+    {
+      "Identity": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\wwwroot\\js\\site.js",
+      "SourceId": "EducationalPlatformITCube.Inspector.Web.Server",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\secon\\Source\\Repos\\EducationalPlatformITCube\\EducationalPlatformITCube.Inspector.Web.Server\\wwwroot\\",
+      "BasePath": "_content/EducationalPlatformITCube.Inspector.Web.Server",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
     }
   ]
 }

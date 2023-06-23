@@ -1,0 +1,15 @@
+﻿@page "/messageComponent"
+@code {
+    List<string> messages = new List<string>();
+
+    public void AddError(string errorMessage)
+    {
+        messages.Add(errorMessage);
+        StateHasChanged();
+    }
+}
+
+@foreach (var message in messages)
+{
+    <div class="alert alert-danger">@message</div>
+}
