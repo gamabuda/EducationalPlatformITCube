@@ -164,6 +164,8 @@
                 context.RequestModels[Number - 1] = applicationModel; //изменить на адекватный
                 if (applicationModel.Status == "Принят")
                     sendM.SendEmail(applicationModel.Email, "Вашу заявку одобрили", "С вами свяжутся в ближайшее время, с уважением IT-Cube.");
+            if (applicationModel.Status == "Отказ")
+                sendM.SendEmail(applicationModel.Email, "Вашу заявку отклонили", applicationModel.AdminComment + ", с уважением IT-Cube.");
                 NavigationManager.NavigateTo("/request");
             //проверить на заполнение
             Console.WriteLine($"{applicationModel.FirstName} {applicationModel.StudyDirection}");

@@ -254,20 +254,164 @@ else
             var workSheet = package.Workbook.Worksheets.Add("32P");
             List<RequestModel> pythonFirstList = list.Where(x => x.StudyDirection == "Python" && x.Session == "Первая").ToList();
             // simple way
-            workSheet.Cells.LoadFromCollection(pythonFirstList, true);
+            workSheet.Row(1).Height = 20;
+            workSheet.Row(1).Style.Font.Bold = true;
+            workSheet.Cells[1, 1].Value = "№";
+            workSheet.Cells[1, 2].Value = "Почта";
+            workSheet.Cells[1, 3].Value = "Фамилия";
+            workSheet.Cells[1, 4].Value = "Имя";
+            workSheet.Cells[1, 5].Value = "Отчество";
+            workSheet.Cells[1, 6].Value = "Дата рождения";
+            workSheet.Cells[1, 7].Value = "Возраст";
+            workSheet.Cells[1, 8].Value = "Направление";
+            workSheet.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet.Cells[1, 11].Value = "Имя родителя";
+            workSheet.Cells[1, 12].Value = "Отчество родителя";
+            workSheet.Cells[1, 13].Value = "Логин";
+            workSheet.Cells[1, 14].Value = "Пароль";
+
+
+            int recordIndex = 2;
+            foreach (var item in pythonFirstList)
+            {
+                workSheet.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet.Cells[recordIndex, 2].Value = item.Email;
+                workSheet.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet.Cells[recordIndex, 7].Value = item.Age;
+                workSheet.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet.Cells[recordIndex, 9].Value = item.Session;
+                workSheet.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet.Cells[recordIndex, 13].Value = item.Login;
+                workSheet.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
             var workSheet2 = package.Workbook.Worksheets.Add("33P");
             List<RequestModel> pythonSecondList = list.Where(x => x.StudyDirection == "Python" && x.Session == "Вторая").ToList();
             // simple way
-            workSheet2.Cells.LoadFromCollection(pythonSecondList, true);
+            workSheet2.Row(1).Height = 20;
+            workSheet2.Row(1).Style.Font.Bold = true;
+            workSheet2.Cells[1, 1].Value = "№";
+            workSheet2.Cells[1, 2].Value = "Почта";
+            workSheet2.Cells[1, 3].Value = "Фамилия";
+            workSheet2.Cells[1, 4].Value = "Имя";
+            workSheet2.Cells[1, 5].Value = "Отчество";
+            workSheet2.Cells[1, 6].Value = "Дата рождения";
+            workSheet2.Cells[1, 7].Value = "Возраст";
+            workSheet2.Cells[1, 8].Value = "Направление";
+            workSheet2.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet2.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet2.Cells[1, 11].Value = "Имя родителя";
+            workSheet2.Cells[1, 12].Value = "Отчество родителя";
+            workSheet2.Cells[1, 13].Value = "Логин";
+            workSheet2.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in pythonSecondList)
+            {
+                workSheet2.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet2.Cells[recordIndex, 2].Value = item.Email;
+                workSheet2.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet2.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet2.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet2.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet2.Cells[recordIndex, 7].Value = item.Age;
+                workSheet2.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet2.Cells[recordIndex, 9].Value = item.Session;
+                workSheet2.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet2.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet2.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet2.Cells[recordIndex, 13].Value = item.Login;
+                workSheet2.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
 
             var workSheet3 = package.Workbook.Worksheets.Add("7J");
             List<RequestModel> javaFirstList = list.Where(x => x.StudyDirection == "Java" && x.Session == "Первая").ToList();
             // simple way
-            workSheet3.Cells.LoadFromCollection(javaFirstList, true);
+            workSheet3.Row(1).Height = 20;
+            workSheet3.Row(1).Style.Font.Bold = true;
+            workSheet3.Cells[1, 1].Value = "№";
+            workSheet3.Cells[1, 2].Value = "Почта";
+            workSheet3.Cells[1, 3].Value = "Фамилия";
+            workSheet3.Cells[1, 4].Value = "Имя";
+            workSheet3.Cells[1, 5].Value = "Отчество";
+            workSheet3.Cells[1, 6].Value = "Дата рождения";
+            workSheet3.Cells[1, 7].Value = "Возраст";
+            workSheet3.Cells[1, 8].Value = "Направление";
+            workSheet3.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet3.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet3.Cells[1, 11].Value = "Имя родителя";
+            workSheet3.Cells[1, 12].Value = "Отчество родителя";
+            workSheet3.Cells[1, 13].Value = "Логин";
+            workSheet3.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in javaFirstList)
+            {
+                workSheet3.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet3.Cells[recordIndex, 2].Value = item.Email;
+                workSheet3.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet3.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet3.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet3.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet3.Cells[recordIndex, 7].Value = item.Age;
+                workSheet3.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet3.Cells[recordIndex, 9].Value = item.Session;
+                workSheet3.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet3.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet3.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet3.Cells[recordIndex, 13].Value = item.Login;
+                workSheet3.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
             var workSheet4 = package.Workbook.Worksheets.Add("2J");
             List<RequestModel> javaSecondList = list.Where(x => x.StudyDirection == "Java" && x.Session == "Вторая").ToList();
             // simple way
-            workSheet4.Cells.LoadFromCollection(javaSecondList, true);
+            workSheet4.Row(1).Height = 20;
+            workSheet4.Row(1).Style.Font.Bold = true;
+            workSheet4.Cells[1, 1].Value = "№";
+            workSheet4.Cells[1, 2].Value = "Почта";
+            workSheet4.Cells[1, 3].Value = "Фамилия";
+            workSheet4.Cells[1, 4].Value = "Имя";
+            workSheet4.Cells[1, 5].Value = "Отчество";
+            workSheet4.Cells[1, 6].Value = "Дата рождения";
+            workSheet4.Cells[1, 7].Value = "Возраст";
+            workSheet4.Cells[1, 8].Value = "Направление";
+            workSheet4.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet4.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet4.Cells[1, 11].Value = "Имя родителя";
+            workSheet4.Cells[1, 12].Value = "Отчество родителя";
+            workSheet4.Cells[1, 13].Value = "Логин";
+            workSheet4.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in javaSecondList)
+            {
+                workSheet4.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet4.Cells[recordIndex, 2].Value = item.Email;
+                workSheet4.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet4.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet4.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet4.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet4.Cells[recordIndex, 7].Value = item.Age;
+                workSheet4.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet4.Cells[recordIndex, 9].Value = item.Session;
+                workSheet4.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet4.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet4.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet4.Cells[recordIndex, 13].Value = item.Login;
+                workSheet4.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
 
             //var workSheet5 = package.Workbook.Worksheets.Add("1SA");
             //List<RequestModel> SAFirstList = list.Where(x => x.StudyDirection == "SA" && x.Session == "Первая").ToList();
@@ -281,11 +425,83 @@ else
             var workSheet7 = package.Workbook.Worksheets.Add("8R");
             List<RequestModel> RFirstList = list.Where(x => x.StudyDirection == "R" && x.Session == "Первая").ToList();
             // simple way
-            workSheet7.Cells.LoadFromCollection(RFirstList, true);
+            workSheet7.Row(1).Height = 20;
+            workSheet7.Row(1).Style.Font.Bold = true;
+            workSheet7.Cells[1, 1].Value = "№";
+            workSheet7.Cells[1, 2].Value = "Почта";
+            workSheet7.Cells[1, 3].Value = "Фамилия";
+            workSheet7.Cells[1, 4].Value = "Имя";
+            workSheet7.Cells[1, 5].Value = "Отчество";
+            workSheet7.Cells[1, 6].Value = "Дата рождения";
+            workSheet7.Cells[1, 7].Value = "Возраст";
+            workSheet7.Cells[1, 8].Value = "Направление";
+            workSheet7.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet7.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet7.Cells[1, 11].Value = "Имя родителя";
+            workSheet7.Cells[1, 12].Value = "Отчество родителя";
+            workSheet7.Cells[1, 13].Value = "Логин";
+            workSheet7.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in RFirstList)
+            {
+                workSheet7.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet7.Cells[recordIndex, 2].Value = item.Email;
+                workSheet7.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet7.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet7.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet7.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet7.Cells[recordIndex, 7].Value = item.Age;
+                workSheet7.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet7.Cells[recordIndex, 9].Value = item.Session;
+                workSheet7.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet7.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet7.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet7.Cells[recordIndex, 13].Value = item.Login;
+                workSheet7.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
             var workSheet8 = package.Workbook.Worksheets.Add("2R");
             List<RequestModel> RSecondList = list.Where(x => x.StudyDirection == "R" && x.Session == "Вторая").ToList();
             // simple way
-            workSheet8.Cells.LoadFromCollection(RSecondList, true);
+            workSheet8.Row(1).Height = 20;
+            workSheet8.Row(1).Style.Font.Bold = true;
+            workSheet8.Cells[1, 1].Value = "№";
+            workSheet8.Cells[1, 2].Value = "Почта";
+            workSheet8.Cells[1, 3].Value = "Фамилия";
+            workSheet8.Cells[1, 4].Value = "Имя";
+            workSheet8.Cells[1, 5].Value = "Отчество";
+            workSheet8.Cells[1, 6].Value = "Дата рождения";
+            workSheet8.Cells[1, 7].Value = "Возраст";
+            workSheet8.Cells[1, 8].Value = "Направление";
+            workSheet8.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet8.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet8.Cells[1, 11].Value = "Имя родителя";
+            workSheet8.Cells[1, 12].Value = "Отчество родителя";
+            workSheet8.Cells[1, 13].Value = "Логин";
+            workSheet8.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in RSecondList)
+            {
+                workSheet8.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet8.Cells[recordIndex, 2].Value = item.Email;
+                workSheet8.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet8.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet8.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet8.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet8.Cells[recordIndex, 7].Value = item.Age;
+                workSheet8.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet8.Cells[recordIndex, 9].Value = item.Session;
+                workSheet8.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet8.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet8.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet8.Cells[recordIndex, 13].Value = item.Login;
+                workSheet8.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
 
             //var workSheet9 = package.Workbook.Worksheets.Add("1MR");
             //List<RequestModel> MRFirstList = list.Where(x => x.StudyDirection == "MR" && x.Session == "Первая").ToList();
@@ -299,28 +515,86 @@ else
             var workSheet11 = package.Workbook.Worksheets.Add("6VR");
             List<RequestModel> VRFirstList = list.Where(x => x.StudyDirection == "VR" && x.Session == "Первая").ToList();
             // simple way
-            workSheet11.Cells.LoadFromCollection(pythonFirstList, true);
+            workSheet11.Row(1).Height = 20;
+            workSheet11.Row(1).Style.Font.Bold = true;
+            workSheet11.Cells[1, 1].Value = "№";
+            workSheet11.Cells[1, 2].Value = "Почта";
+            workSheet11.Cells[1, 3].Value = "Фамилия";
+            workSheet11.Cells[1, 4].Value = "Имя";
+            workSheet11.Cells[1, 5].Value = "Отчество";
+            workSheet11.Cells[1, 6].Value = "Дата рождения";
+            workSheet11.Cells[1, 7].Value = "Возраст";
+            workSheet11.Cells[1, 8].Value = "Направление";
+            workSheet11.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet11.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet11.Cells[1, 11].Value = "Имя родителя";
+            workSheet11.Cells[1, 12].Value = "Отчество родителя";
+            workSheet11.Cells[1, 13].Value = "Логин";
+            workSheet11.Cells[1, 14].Value = "Пароль";
+
+
+            recordIndex = 2;
+            foreach (var item in VRFirstList)
+            {
+                workSheet11.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet11.Cells[recordIndex, 2].Value = item.Email;
+                workSheet11.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet11.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet11.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet11.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet11.Cells[recordIndex, 7].Value = item.Age;
+                workSheet11.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet11.Cells[recordIndex, 9].Value = item.Session;
+                workSheet11.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet11.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet11.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet11.Cells[recordIndex, 13].Value = item.Login;
+                workSheet11.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
             var workSheet12 = package.Workbook.Worksheets.Add("5VR");
             List<RequestModel> VRSecondList = list.Where(x => x.StudyDirection == "VR" && x.Session == "Вторая").ToList();
             // simple way
-            workSheet12.Cells.LoadFromCollection(pythonSecondList, true);
+            workSheet12.Row(1).Height = 20;
+            workSheet12.Row(1).Style.Font.Bold = true;
+            workSheet12.Cells[1, 1].Value = "№";
+            workSheet12.Cells[1, 2].Value = "Почта";
+            workSheet12.Cells[1, 3].Value = "Фамилия";
+            workSheet12.Cells[1, 4].Value = "Имя";
+            workSheet12.Cells[1, 5].Value = "Отчество";
+            workSheet12.Cells[1, 6].Value = "Дата рождения";
+            workSheet12.Cells[1, 7].Value = "Возраст";
+            workSheet12.Cells[1, 8].Value = "Направление";
+            workSheet12.Cells[1, 9].Value = "Смена обучения в школе";
+            workSheet12.Cells[1, 10].Value = "Фамилия родителя";
+            workSheet12.Cells[1, 11].Value = "Имя родителя";
+            workSheet12.Cells[1, 12].Value = "Отчество родителя";
+            workSheet12.Cells[1, 13].Value = "Логин";
+            workSheet12.Cells[1, 14].Value = "Пароль";
 
-            ////// mutual
-            ////workSheet.Row(1).Height = 20;
-            ////workSheet.Row(1).Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-            ////workSheet.Row(1).Style.Font.Bold = true;
-            ////workSheet.Cells[1, 1].Value = "No";
-            ////workSheet.Cells[1, 2].Value = "Name";
-            ////workSheet.Cells[1, 3].Value = "Age";
 
-            ////int recordIndex = 2;
-            ////foreach (var item in list)
-            ////{
-            ////    workSheet.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
-            ////    workSheet.Cells[recordIndex, 2].Value = item.UserName;
-            ////    workSheet.Cells[recordIndex, 3].Value = item.Age;
-            ////    recordIndex++;
-            ////}
+            recordIndex = 2;
+            foreach (var item in VRSecondList)
+            {
+                workSheet12.Cells[recordIndex, 1].Value = (recordIndex - 1).ToString();
+                workSheet12.Cells[recordIndex, 2].Value = item.Email;
+                workSheet12.Cells[recordIndex, 3].Value = item.LastName;
+                workSheet12.Cells[recordIndex, 4].Value = item.FirstName;
+                workSheet12.Cells[recordIndex, 5].Value = item.MiddleName;
+                workSheet12.Cells[recordIndex, 6].Value = item.DateOfBirth;
+                workSheet12.Cells[recordIndex, 7].Value = item.Age;
+                workSheet12.Cells[recordIndex, 8].Value = item.StudyDirection;
+                workSheet12.Cells[recordIndex, 9].Value = item.Session;
+                workSheet12.Cells[recordIndex, 10].Value = item.ParentLastName;
+                workSheet12.Cells[recordIndex, 11].Value = item.ParentFirstName;
+                workSheet12.Cells[recordIndex, 12].Value = item.ParentMiddleName;
+                workSheet12.Cells[recordIndex, 13].Value = item.Login;
+                workSheet12.Cells[recordIndex, 14].Value = item.Password;
+                recordIndex++;
+            }
+
+            // mutual
+            
 
             return package.GetAsByteArray();
         }
